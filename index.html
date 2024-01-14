@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <h1>To do List</h1>
+        </header> 
+        <!-- Essa parte pega a tarefa -->
+        <form id="TodoForm">
+            <div id="form-control">
+                <p>Adicionar Tarefa:</p>
+                <input type="text" id="tasks" placeholder="O que você vai fazer?">
+                <button id="CreatTask">✔</button>
+            </div>
+        </form>
+        <!-- Aqui temos as tasks disponíveis-->
+        <div id="container-tasks">
+            <div class="task done">
+                <h3>Estudar Js</h3>
+                <button class="DoneTask">✔</button>
+                <button class="EditTask">✎</button>
+                <button class="RemoveTask">✘</button>
+            </div>
+            <div class="task">
+                <h3>Estudar HTML e CSS</h3>
+                <button class="DoneTask">✔</button>
+                <button class="EditTask">✎</button>
+                <button class="RemoveTask">✘</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        Criado Por Henrique
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
