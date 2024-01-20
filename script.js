@@ -6,26 +6,74 @@
 //         alert('[ERRO] Por favor Preencha os campos.')
 //     }else{
 //         // Criando uma div para a tarefa
-//         const containertasks = document.querySelector('#container-tasks') 
-//         let item = document.createElement('div')
-//         item.classList.add("task")
-//         containertasks.appendChild(item)
-//         // Criando o h3 filho da div
-//         let title = document.createElement('h3');
-//         title.innerText = txtTask
-//         item.appendChild(title)
-//         console.log(item)
+//         let referencia = document.getElementById('container-tasks');
+//         let newTask = document.createElement('div');
+//         newTask.text = `${txtTask}`
+//         referencia.appendChild(newTask);
+// }}
 
-    
-//     }     
-// }
+const todoForm = document.querySelector('#TodoForm');
+const task = document.querySelector('#tasks');
+const container = document.querySelector('#container-tasks')
+/*
+ Buscar botões
+*/
+const Done = document.querySelector('.DoneTask');
+const Edit = document.querySelector('.Edittask');
+const Remove = document.querySelector('.RemoveTask');
 
 
-const formConst = document.querySelector('#TodoForm').addEventListener('submit', (e) => {
-    // Esse preventDefault é apenas por enquanto que não montei o backend, evita o envio desnecessário para o BackEnd.
+addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('Enviado')
-
+    let createTask = task.value;
+    // Se eu não digitar nada no Formulário o criação da task não irá ocorrer.
+    if(createTask){
+        safeTodo(createTask)
+    }else {
+        alert('[ERRO] Digite algo no campo "Adicionar Tareda".')
+    }
 })
 
+
+const safeTodo = (text) => {
+    const todo = document.createElement('div');
+    todo.classList.add('task')
+
+    const FormTitle = document.createElement('h3');
+    FormTitle.innerText = text
+    todo.appendChild(FormTitle);
+
+    const btnDone = document.createElement('button');
+    btnDone.classList.add('DoneTask')
+    btnDone.innerText = '✔'
+    todo.appendChild(btnDone);
+
+    const btnEdit = document.createElement('button');
+    btnEdit.classList.add('EditTask');
+    btnEdit.innerText = '✎'
+    todo.appendChild(btnEdit);
+
+    const btnremove = document.createElement('button');
+    btnremove.classList.add('RemoveTask')
+    btnremove.innerText = '✘'
+    todo.appendChild(btnremove)
+
+    container.appendChild(todo)
+    
+    task.focus()
+    task.value = '';
+
+}
+/*Da o evento click a todo o HTML, mas ignora quem não tem as classes especificadas*/
+document.addEventListener('click', (e) => {
+    let btnpress = e.target
+
+    if(btnpress.classList.contains("DoneTask")){
+        console.log('Concluido')
+    }else if(btnpress.classList.contains('RemoveTask')){
+        console.log('Remove')
+    }else if(btnpress.classList.contains("EditTask")){
+        console.log('Edit')
+    }
+})
 
