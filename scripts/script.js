@@ -33,7 +33,7 @@ addEventListener('submit', (e) => {
         alert('[ERRO] Digite algo no campo "Adicionar Tareda".')
     }
 })
-
+/* Criação do molde com valores da Task*/
 
 const safeTodo = (text) => {
     const todo = document.createElement('div');
@@ -62,16 +62,17 @@ const safeTodo = (text) => {
     
     task.focus()
     task.value = '';
-
 }
 /*Da o evento click a todo o HTML, mas ignora quem não tem as classes especificadas*/
 document.addEventListener('click', (e) => {
     let btnpress = e.target
+    const elementPress = btnpress.closest('div');
 
     if(btnpress.classList.contains("DoneTask")){
-        console.log('Concluido')
+        elementPress.classList.toggle('done')
     }else if(btnpress.classList.contains('RemoveTask')){
-        console.log('Remove')
+        
+        
     }else if(btnpress.classList.contains("EditTask")){
         console.log('Edit')
     }
