@@ -33,6 +33,18 @@ addEventListener('submit', (e) => {
         alert('[ERRO] Digite algo no campo "Adicionar Tareda".')
     }
 })
+
+/* Edição de uma Task */
+
+const EditForm = () => {
+    const hide = document.querySelector('#edit-control')
+    hide.classList.toggle('hide');
+
+}
+
+
+
+
 /* Criação do molde com valores da Task*/
 
 const safeTodo = (text) => {
@@ -71,10 +83,10 @@ document.addEventListener('click', (e) => {
     if(btnpress.classList.contains("DoneTask")){
         elementPress.classList.toggle('done')
     }else if(btnpress.classList.contains('RemoveTask')){
-        
+        elementPress.remove()
         
     }else if(btnpress.classList.contains("EditTask")){
-        console.log('Edit')
+        EditForm()
     }
 })
 

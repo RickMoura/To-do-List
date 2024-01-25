@@ -16,8 +16,17 @@
         <form id="TodoForm">
             <div id="form-control">
                 <p>Adicionar Tarefa:</p>
-                <input type="text" id="tasks" placeholder="O que você vai fazer?">
+                <input type="text" class="tasks" placeholder="O que você vai fazer?">
                 <button id="CreatTask">✔</button>
+            </div>
+        </form>
+        <!-- Formulário de Edição-->
+        <form class="EditTodo" >
+            <div id="edit-control" class="hide">
+                <p>Editar Tarefa:</p>
+                <input class="tasks" type="text" placeholder="Edite">
+                <button>✔</button>
+                <button id="cancel">Cancelar</button>
             </div>
         </form>
         <!-- Aqui temos as tasks disponíveis-->
