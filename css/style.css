@@ -13,6 +13,8 @@ body {
     background: black url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D') center center no-repeat fixed;
     background-size: cover;
 }
+
+
 #container {
     max-width: 450px;
     margin: 3rem auto; 
@@ -30,20 +32,31 @@ body {
 /*
  Formulário
 */
-#tasks {
+.tasks {
     display: inline-flex;
     width: 75%;
     padding: .25rem .30rem;
     margin-right: .2rem;
 }
 
-#TodoForm {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-
+#TodoForm, .EditTodo {
+    padding: 0.5rem;
 }
 
-#TodoForm p {
+.EditTodo {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+
+#cancel {
+    margin-top: 10px;
+}
+
+p {
     margin-bottom:.34rem;
     font-weight: bold;
 }
