@@ -7,8 +7,9 @@ const container = document.querySelector('#container-tasks')
 const Done = document.querySelector('.DoneTask');
 const Edit = document.querySelector('.Edittask');
 const Remove = document.querySelector('.RemoveTask');
-const cancelEditBtn = document.querySelector('#cancel');
+const cancelEditBtn = document.querySelector('#BtnCancel');
 const EditForm = document.querySelector('#EditForm');
+const BtnConfirme = document.querySelector('#BtnConfirme');
 let oldInputValue;
 
 todoForm.addEventListener('submit', (e) => {
@@ -88,6 +89,13 @@ document.addEventListener('click', (e) => {
 
 cancelEditBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    
     formEdit()
 })
+
+BtnConfirme.addEventListener('click', (e) => {
+    e.preventDefault()
+    
+    }
+})
+
+
