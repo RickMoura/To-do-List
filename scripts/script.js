@@ -1,9 +1,9 @@
-const todoForm = document.querySelector('#TodoForm');
-const task = document.querySelector('#tasks');
-const container = document.querySelector('#container-tasks')
 /*
  Buscar botões
 */
+const todoForm = document.querySelector('#TodoForm');
+const task = document.querySelector('#tasks');
+const container = document.querySelector('#container-tasks')
 const Done = document.querySelector('.DoneTask');
 const Edit = document.querySelector('.Edittask');
 const Remove = document.querySelector('.RemoveTask');
@@ -12,8 +12,10 @@ const EditForm = document.querySelector('#EditForm');
 const EditControl = document.querySelector('#edit-control');
 let oldInputValue;
 
+/* Verifica se algo foi digitado e encia a Create task que é o valor do input*/
+
 todoForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); // não recarrega a página
     let createTask = task.value;
     // Se eu não digitar nada no Formulário o criação da task não irá ocorrer.
     if(createTask){
@@ -30,6 +32,8 @@ const formEdit = () => {
     document.querySelector('#form-control').classList.toggle('hide');
 }
 
+/* Verifica se o valor clicado la em baixo é igual ao do valor procurado pelo forEach, e caso for ele da um todoTitle = text que é o valor novo digitado*/
+
 const updateTodo = (text) => {
     const todos = document.querySelectorAll('.task');
 
@@ -42,9 +46,6 @@ const updateTodo = (text) => {
     }) 
 
 }
-
-
-
 
 /* Criação do molde com valores da Task*/
 
