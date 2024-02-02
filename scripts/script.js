@@ -9,7 +9,7 @@ const Edit = document.querySelector('.Edittask');
 const Remove = document.querySelector('.RemoveTask');
 const cancelEditBtn = document.querySelector('#BtnCancel');
 const EditForm = document.querySelector('#EditForm');
-const BtnConfirme = document.querySelector('#BtnConfirme');
+const EditControl = document.querySelector('#edit-control');
 let oldInputValue;
 
 todoForm.addEventListener('submit', (e) => {
@@ -28,7 +28,18 @@ todoForm.addEventListener('submit', (e) => {
 const formEdit = () => {
     document.querySelector('#edit-control').classList.toggle('hide');
     document.querySelector('#form-control').classList.toggle('hide');
+}
 
+const updateTodo = (text) => {
+    const todos = document.querySelectorAll('.task');
+
+    todos.forEach((task) => {
+        let todoTitle = task.querySelector('h3')
+
+        if(todoTitle.innerText  === oldInputValue){
+            todoTitle.innerText = text;
+        }
+    }) 
 
 }
 
@@ -73,7 +84,6 @@ document.addEventListener('click', (e) => {
     let chieldElement;
     if (elementPress && elementPress.querySelector('h3')){
         chieldElement = elementPress.querySelector('h3').innerText;
-        console.log(chieldElement)
     }
     if(btnpress.classList.contains("DoneTask")){
         elementPress.classList.toggle('done')
@@ -86,16 +96,19 @@ document.addEventListener('click', (e) => {
         oldInputValue = chieldElement;
     }
 })
-
+/* Botão de cancelamento co ID */
 cancelEditBtn.addEventListener('click', (e) => {
     e.preventDefault()
     formEdit()
 })
 
-BtnConfirme.addEventListener('click', (e) => {
-    e.preventDefault()
-    
+/* Pegando o submit do Fomulário. Quando vamos pegar dados de um form não usamos o click, mas o submit*/
+EditControl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let editTitle = EditForm.value;
+    if(editTitle){
+        updateTodo(editTitle)
     }
+
+    formEdit();
 })
-
-
