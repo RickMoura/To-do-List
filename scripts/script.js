@@ -16,7 +16,7 @@ let oldInputValue;
 
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault(); // não recarrega a página
-    let createTask = task.value;
+    let createTask = task;
     // Se eu não digitar nada no Formulário o criação da task não irá ocorrer.
     if(createTask){
         safeTodo(createTask)
@@ -24,8 +24,6 @@ todoForm.addEventListener('submit', (e) => {
         alert('[ERRO] Digite algo no campo "Adicionar Tareda".')
     }
 })
-
-/* Edição de uma Task */
 
 const formEdit = () => {
     document.querySelector('#edit-control').classList.toggle('hide');
