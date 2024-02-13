@@ -16,7 +16,7 @@ let oldInputValue;
 
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault(); // não recarrega a página
-    let createTask = task;
+    let createTask = task.value;
     // Se eu não digitar nada no Formulário o criação da task não irá ocorrer.
     if(createTask){
         safeTodo(createTask)
