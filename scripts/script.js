@@ -2,7 +2,7 @@
  Buscar botões
 */
 const todoForm = document.querySelector('#TodoForm');
-const task = document.querySelector('#tasks').value;
+const task = document.querySelector('#tasks');
 const container = document.querySelector('#container-tasks')
 const Done = document.querySelector('.DoneTask');
 const Edit = document.querySelector('.Edittask');
@@ -16,7 +16,7 @@ let oldInputValue;
 
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault(); // não recarrega a página
-    let createTask = task;
+    let createTask = task.value;
     // Se eu não digitar nada no Formulário o criação da task não irá ocorrer.
     if(createTask){
         safeTodo(createTask)
