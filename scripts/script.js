@@ -24,7 +24,7 @@ todoForm.addEventListener('submit', (e) => {
         alert('[ERRO] Digite algo no campo "Adicionar Tareda".')
     }
 })
-
+/*Adiciona e remove o hide, mostra e remove os formularios*/
 const formEdit = () => {
     document.querySelector('#edit-control').classList.toggle('hide');
     document.querySelector('#form-control').classList.toggle('hide');
