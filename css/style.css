@@ -32,7 +32,7 @@ body {
 /*
  Formulário
 */
-.tasks {
+.tasksEdit, .TaskCreate {
     display: inline-flex;
     width: 75%;
     padding: .25rem .30rem;

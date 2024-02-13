@@ -12,23 +12,26 @@
         <header>
             <h1>To do List</h1>
         </header> 
+        
         <!-- Essa parte pega a tarefa -->
         <form id="TodoForm">
             <div id="form-control">
                 <p>Adicionar Tarefa:</p>
-                <input type="text" class="tasks" placeholder="O que você vai fazer?">
+                <input type="text" id="tasks"    class="TaskCreate" placeholder="O que você vai fazer?">
                 <button id="CreatTask">✔</button>
             </div>
         </form>
+
         <!-- Formulário de Edição-->
-        <form class="EditTodo" >
-            <div id="edit-control" class="hide">
+        <form  id="edit-control" class="EditTodo hide">
+            <div >
                 <p>Editar Tarefa:</p>
-                <input class="tasks" type="text" placeholder="Edite">
+                <input class="tasksEdit" id ='EditForm' type="text" placeholder="Edite">
                 <button>✔</button>
-                <button id="cancel">Cancelar</button>
             </div>
+            <button id="BtnCancel">Cancelar</button>
         </form>
+
         <!-- Aqui temos as tasks disponíveis-->
         <div id="container-tasks">
             <div class="task done">
@@ -48,7 +51,7 @@
 
 
     <footer>
-        Criado Por Henrique
+        Criado Por <a href="https://github.com/RickMoura" target="_blank">Henrique</a>
     </footer>
     <script src="./scripts/script.js"></script>
 </body>
