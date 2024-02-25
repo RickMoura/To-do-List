@@ -32,7 +32,11 @@ body {
 /*
  Formulário
 */
+<<<<<<< HEAD
 .tasksEdit, .TaskCreate {
+=======
+.tasks {
+>>>>>>> parent of e06a00e (bug on add button)
     display: inline-flex;
     width: 75%;
     padding: .25rem .30rem;
