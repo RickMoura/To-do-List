@@ -14,17 +14,16 @@
         </header> 
         
         <!-- Essa parte pega a tarefa -->
-        <form id="TodoForm" class="EditTodo">
+        <form id="TodoForm">
             <div id="form-control">
                 <p>Adicionar Tarefa:</p>
                 <input type="text" id="tasks"    class="TaskCreate" placeholder="O que você vai fazer?">
-                <input id="description" class="TaskCreate" type="text" placeholder="Descrição"> <br>
                 <button id="CreatTask">✔</button>
             </div>
         </form>
 
         <!-- Formulário de Edição-->
-        <form id="edit-control" class="EditTodo hide">
+        <form  id="edit-control" class="EditTodo hide">
             <div >
                 <p>Editar Tarefa:</p>
                 <input class="tasksEdit" id ='EditForm' type="text" placeholder="Edite">
@@ -35,7 +34,18 @@
 
         <!-- Aqui temos as tasks disponíveis-->
         <div id="container-tasks">
-
+            <div class="task done">
+                <h3>Estudar Js</h3>
+                <button class="DoneTask">✔</button>
+                <button class="EditTask">✎</button>
+                <button class="RemoveTask">✘</button>
+            </div>
+            <div class="task">
+                <h3>Estudar HTML e CSS</h3>
+                <button class="DoneTask">✔</button>
+                <button class="EditTask">✎</button>
+                <button class="RemoveTask">✘</button>
+            </div>
         </div>
     </div>
 

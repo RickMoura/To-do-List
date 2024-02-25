@@ -2,12 +2,6 @@
 /*
  Geral 
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
-:root {
-    --Font1: 'Nunito';
-}
 * {
     padding: 0;
     margin: 0;
@@ -40,34 +34,22 @@ body {
 */
 .tasksEdit, .TaskCreate {
     display: inline-flex;
-    width: 85%;
+    width: 75%;
     padding: .25rem .30rem;
     margin-right: .2rem;
-    font-family: var(--Font1);
-    margin-bottom: 7px;
 }
 
 #TodoForm, .EditTodo {
     padding: 0.5rem;
 }
 
-#description{
-
-}
-
 .EditTodo {
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
 }
 
 .hide {
     display: none;
 }
-
-.hide_border {
-    border: none;
-}
-
 
 
 #cancel {
@@ -77,14 +59,8 @@ body {
 p {
     margin-bottom:.34rem;
     font-weight: bold;
-    font-family: var(--Font1);
 }
-.bio {
-    font-family: var(--Font1);
-    font-size: 15px;
-    font-weight: 400;
 
-}
 /*
  Botões
 */
@@ -107,6 +83,7 @@ button:hover {
 
 .task {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.226);
