@@ -3,6 +3,7 @@
 */
 const todoForm = document.querySelector('#TodoForm');
 const task = document.querySelector('#tasks');
+const bio = document.querySelector('#description');
 const container = document.querySelector('#container-tasks')
 const Done = document.querySelector('.DoneTask');
 const Edit = document.querySelector('.Edittask');
@@ -17,9 +18,10 @@ let oldInputValue;
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault(); // não recarrega a página
     let createTask = task.value;
+    let bio_sub = bio.value;
     // Se eu não digitar nada no Formulário o criação da task não irá ocorrer.
-    if(createTask){
-        safeTodo(createTask)
+    if(createTask || bio_sub){
+        safeTodo(createTask, bio_sub)
     }else {
         alert('[ERRO] Digite algo no campo "Adicionar Tareda".')
     }
@@ -49,7 +51,7 @@ const updateTodo = (text) => {
 
 /* Criação do molde com valores da Task*/
 
-const safeTodo = (text) => {
+const safeTodo = (text, bio) => {
     const todo = document.createElement('div');
     todo.classList.add('task')
 
@@ -57,6 +59,12 @@ const safeTodo = (text) => {
     FormTitle.innerText = text
     FormTitle.classList.add('Title')
     todo.appendChild(FormTitle);
+
+    const Descripiton = document.createElement('p');
+    Descripiton.innerText = bio
+    Descripiton.classList.add('bio')
+    todo.appendChild(Descripiton);
+
 
     const btnDone = document.createElement('button');
     btnDone.classList.add('DoneTask')
